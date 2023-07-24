@@ -174,12 +174,17 @@ public class GestorProductos {
             }else{
                 productosDeUnaCategoria = new ArrayList<>();
             }
-            productosDeUnaCategoria.add(productoAAgregar);
-            productosPorCategoria.put(categoria,
-                    productosDeUnaCategoria);
+            if(productosDeUnaCategoria.contains(productoAAgregar)){
+                System.out.println("El producto '" + productoAAgregar + "' que" +
+                        " intenta agregar ya pertenece a la categoría "+ categoria + ".");
+            } else{
+                productosDeUnaCategoria.add(productoAAgregar);
+                productosPorCategoria.put(categoria,
+                        productosDeUnaCategoria);
 
-            System.out.println("El producto '" + productoAAgregar + "' ha " +
-                    "sido agregado a la categoría " + categoria + ".");
+                System.out.println("El producto '" + productoAAgregar + "' ha " +
+                        "sido agregado a la categoría " + categoria + ".");
+            }
         }
     }
 
